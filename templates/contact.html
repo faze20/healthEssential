@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Contact us :</h1>
+
+        <div class="row">
+          <div class="col-sm">
+            <h2>Head Office:</h2>
+            <address>Flat 12, Nainby house
+                Kennington <br>
+                Post Code:SE5 5UB
+            </address>
+            <p>Phone:+44769795353</p>
+            <p>Fax:+44769795354</p>
+            <p>Email:nfo@school.com</p>
+            <div>
+              <h2>SwissGarde (Pty) Ltd</h2>
+              <address>
+                5, Tuscany Business Park <br>
+                6 Combe place, Rivonia
+              </address>
+              <p>Phone : (011) 317 8300</p>
+            </div>
+            <div>
+              <h2>Manufactured BY</h2>
+              <h3>Hersol Manufacturing</h3>
+              <address>
+                26, Maddisson Street Jeppestown <br>
+                South Africa
+              </address>
+              <p>Phone :+289-88974285571</p>
+              <p>Email:- info@hersolmanufacturing.com</p>
+
+            </div>
+          </div>
+          <div class="col-sm">
+                {% if messages %}
+                {% for message in messages %}
+                 <div class="alert alert-warning alert dismissable" role="alert">
+                   <button class="close" data-dismiss="alert">
+                     <small><sup>x</sup></small>
+                   </button>
+                 </div>
+                {% endfor %}
+             {% endif %}
+
+                <form action="" method="POST">
+                        {% csrf_token %}
+                    
+                        {{ form.as_p }}
+                        <input class="btn btn-success ml-2"  type="submit" value= "save">  
+                        {% if form.save %} :
+                        {% for message in messages %}
+                        <div class="alert alert-warning alert dismissable" role="alert">
+                                <button class="close" data-dismiss="alert">
+                                  <small><sup>x</sup></small>
+                                </button>
+                              </div>
+                              {% endfor %}
+                              {% endif %}
+                 
+                </form>
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock content %}

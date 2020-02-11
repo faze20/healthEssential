@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for events in object_list %}
+       <div class="events-entry">
+         <h2><a href="{% url 'event_detail' events.pk %}">{{events.name}}</a></h2>
+            <p>{{events.price}}</p>
+        </div>
+{% endfor %}
+
+
+        <h1> Hi {{ name }}</h1>
+
+
+    <p>your content has been submitted.</p>
+
+
+{% endblock content %}

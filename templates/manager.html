@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+Hi {{ user.username }} |
+ <a href="{% url 'logout' %}"> Log out</a> 
+{% else %}
+ You are not logged in. |
+ <a  href="{% url 'login'%}"> Log In</a>
+{% endif %}
+
+        {% for item in object_list %}
+
+        <h1>hi {{item.name}}</h1>
+
+        <p>you can update, edit,delete products and services here.</p>
+
+        {% endfor %}
+
+<h2>New Item</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button  class="btn btn-success ml-2" type="submit">+add</button>
+</form>
+{% endblock content %}
