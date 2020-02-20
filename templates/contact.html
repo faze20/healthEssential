@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -38,31 +39,11 @@
             </div>
           </div>
           <div class="col-sm">
-                {% if messages %}
-                {% for message in messages %}
-                 <div class="alert alert-warning alert dismissable" role="alert">
-                   <button class="close" data-dismiss="alert">
-                     <small><sup>x</sup></small>
-                   </button>
-                 </div>
-                {% endfor %}
-             {% endif %}
 
                 <form action="" method="POST">
                         {% csrf_token %}
-                    
-                        {{ form.as_p }}
-                        <input class="btn btn-success ml-2"  type="submit" value= "save">  
-                        {% if form.save %} :
-                        {% for message in messages %}
-                        <div class="alert alert-warning alert dismissable" role="alert">
-                                <button class="close" data-dismiss="alert">
-                                  <small><sup>x</sup></small>
-                                </button>
-                              </div>
-                              {% endfor %}
-                              {% endif %}
-                 
+                        {{ form|crispy }}
+                        <input class="btn btn-success ml-2"  type="submit" value= "Submit">  
                 </form>
           </div>
         </div>

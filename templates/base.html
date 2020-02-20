@@ -22,73 +22,69 @@
             
   <body>
     <div class="top_nav_bar">
-    <div class="search-box">
-      <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
-      <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
-    <img src="/static/photos/logoT.png"  width="40" height="40"  class="logo" alt="">
-    <input type="text" class="form-control">
-    <span class="input-group-text"><i class="fa fa-search"></i></span>
-  </div>
+        <div class="search-box">
+          <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
+          <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
+          <a href="{% url 'home' %}">
+        <img src="/static/photos/logoT.png"  width="40" height="40"  class="logo" alt=""></a>
+        <input type="text" class="form-control">
+        <span class="input-group-text"><i class="fa fa-search"></i></span>
+      </div>
 
-  <div class="menu-bar">
-    <ul>
-      <li><a href="{% url 'home' %}"><i class="fa fa-shopping-basket"></i>Cart</a></li>
-      <li><a href="{% url 'signup' %}">Sign up</a></li>
-      <li><a href="{% url 'login' %}">Log In</a></li>
-    </ul>
-  </div>
+        <div class="menu-bar">
+        <ul>
+          <li><a href="{% url 'home' %}"><i class="fa fa-shopping-basket"></i>Cart</a></li>
+          <li><a href="{% url 'signup' %}">Sign up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+        </ul>
+      </div>
 </div>
 
     <main class="content">
       {% block content %}
       {% endblock content %}
 
-      <div class="jumbotron text-center" style="margin-bottom:0">
-        <p>Footer</p>
-        <!-----------------------------------------------Footer------------------------------------------------>
-            <!--section class="footer">
-  <div class="container text-center">
-      <div class="row">
-          <div class="col-md-3">
-              <h1>Useful liks</h1>
-              <p>Privacy policy</p>
-              <p>Terms of use</p>
-              <p>Return policy</p>
-              <p>Discount coupons</p>
-
-          </div>
-          <div class="col-md-3">
-                  <h1>Company</h1>
-                  <p>About Us</p>
-                  <p><a href="{% url 'contact' %}">Contact Us</a></p>
-                  <p>Career</p>
-                  <p>Affiliate</p>
-  
-          </div>
-          <div class="col-md-3">
-                  <h1>Follow us on </h1>
-                  <p><i class="fa fa-instagram"></i> Instagram</p>
-                  <p><i class="fa fa-google-plus" ></i>Google +</p>
-                  <p><i class="fa fa-skype"></i>Skype</p>
-                  <p><i class="fa fa-facebook-official"></i> Facebook</p>
-  
-          </div>
-          <div class="col-md-3 footer-image">
-                  <h1>Download App</h1>
-                  <img src="/static/photos/applogo.png" alt="">
-  
+        <section class="footer">
+          <div class="container text-center">
+              <div class="row">
+                  <div class="col-md-3">
+                      <h1>Useful liks</h1>
+                      <p>Privacy policy</p>
+                      <p>Terms of use</p>
+                      <p>Return policy</p>
+                      <p>Discount coupons</p>
+      
+                  </div>
+                  <div class="col-md-3">
+                          <h1>Company</h1>
+                          <p>About Us</p>
+                          <p><a href="{% url 'contact' %}">Contact Us</a></p>
+                          <p>Career</p>
+                          <p>Affiliate</p>
+          
+                  </div>
+                  <div class="col-md-3">
+                          <h1>Follow us on </h1>
+                          <p><i class="fa fa-instagram"></i> Instagram</p>
+                          <p><i class="fa fa-google-plus" ></i>Google +</p>
+                          <p><i class="fa fa-skype"></i>Skype</p>
+                          <p><i class="fa fa-facebook-official"></i> Facebook</p>
+          
+                  </div>
+                  <div class="col-md-3 footer-image">
+                          <h1>Download App</h1>
+                          <img src="{% static 'photos/applogo.webp' %}"  width="40" height="40"   alt="">
+          
+                      </div>
+          
+          
+          
               </div>
-  
-  
-  
-      </div>
-      <hr>
-      <p class="copyright"><i class="fa fa-copyright"></i>health essentials</p>
-  </div>
-
-</section-->
-
-      </div>
+              <hr>
+              <p class="copyright"><i class="fa fa-copyright"></i>health essentials</p>
+          </div>
+      
+      </section>
 
       <script>
         function openmenu() {

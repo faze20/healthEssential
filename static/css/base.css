@@ -220,11 +220,15 @@ body
     }
     .side-menu ul li:hover ul
     {
-        margin-left: 33%;
+        margin-left: 31%;
     }
     #menu-btn
     {
         display: block;
+    }
+    .content 
+    {
+        margin-top: 90px;
     }
 
 }
