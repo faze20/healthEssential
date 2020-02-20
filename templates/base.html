@@ -2,140 +2,110 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-<title>Health Essentials</title>
-<link rel="stylesheet" href="{% static 'css/base.css' %}" >
-<link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
- 
-
-</head>
-
-<body>
-
-    <div class="top-nav-bar">
-
-        <div class="search-box">
-            <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
-            <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
-            <a  href="{% url 'home' %}"><img src="/static/photos/logoT.png" class="logo"></a>
-            <input type="text" class="form-control">
-            <span class="input-group-text"><i class="fa fa-search"></i></span>
-        </div>
-        <div class="menu-bar">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-                <li><a href="#"><i class="fa fa-shopping-basket"></i>cart</a></li>
-            </ul>
-        </div>
-    </div>
-    {% block content %}
-    {% endblock content %} 
-
-
-
-    <!---------------------------------Website features------------------------------------------------>
-    <section class="website-features">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 feature-box">
-                    <img src="/static/photos/herbs.jpg" alt=""></a>
-                    <div class="feature-text">
-                        <p><b>100% herbal remedy</b> available now</p>
-                    </div>
-                </div>
-                <div class="col-md-3 feature-box">
-                    <img src="/static/photos/creditcard.png" alt=""></a>
-                        <div class="feature-text">
-                            <p><b>Online payment</b> available</p>
-                        </div>
-                </div>
-                <div class="col-md-3 feature-box">
-                    <img src="/static/photos/delivery.png" alt=""></a>
-                        <div class="feature-text">
-                            <p><b>Get free delivery</b> if you order now</p>
-                        </div>
-                </div>
-                <div class="col-md-3 feature-box">
-                     <img src="/static/photos/cash.png" alt=""></a>
-                        <div class="feature-text">
-                            <p><b>earn more money</b> with refferals</p>
-                        </div>
-                </div>    
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-            </div>
-        </div>
+    <link rel="stylesheet"  href="{% static 'css/base.css' %}" >
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' type='text/css'>
 
 
-    </section>
-
-<!-----------------------------------------------Footer------------------------------------------------>
-<section class="footer">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-3">
-                <h1>Useful liks</h1>
-                <p>Privacy policy</p>
-                <p>Terms of use</p>
-                <p>Return policy</p>
-                <p>Discount coupons</p>
-
-            </div>
-            <div class="col-md-3">
-                    <h1>Company</h1>
-                    <p>About Us</p>
-                    <p><a href="{% url 'contact' %}">Contact Us</a></p>
-                    <p>Career</p>
-                    <p>Affiliate</p>
-    
-            </div>
-            <div class="col-md-3">
-                    <h1>Follow us on </h1>
-                    <p><i class="fa fa-instagram"></i> Instagram</p>
-                    <p><i class="fa fa-google-plus" ></i>Google +</p>
-                    <p><i class="fa fa-skype"></i>Skype</p>
-                    <p><i class="fa fa-facebook-official"></i> Facebook</p>
-    
-            </div>
-            <div class="col-md-3 footer-image">
-                    <h1>Download App</h1>
-                    <img src="/static/photos/applogo.png" alt="">
-    
-                </div>
-    
-    
-    
-        </div>
-        <hr>
-        <p class="copyright"><i class="fa fa-copyright"></i>health essentials</p>
-    </div>
-
-</section>
+    <title>Health Essentials</title>
 
 
+  </head>
 
+            
+  <body>
+    <div class="top_nav_bar">
+    <div class="search-box">
+      <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
+      <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
+    <img src="/static/photos/logoT.png"  width="40" height="40"  class="logo" alt="">
+    <input type="text" class="form-control">
+    <span class="input-group-text"><i class="fa fa-search"></i></span>
+  </div>
 
+  <div class="menu-bar">
+    <ul>
+      <li><a href="{% url 'home' %}"><i class="fa fa-shopping-basket"></i>Cart</a></li>
+      <li><a href="{% url 'signup' %}">Sign up</a></li>
+      <li><a href="{% url 'login' %}">Log In</a></li>
+    </ul>
+  </div>
+</div>
 
-    <script>
-        function openmenu()
-        {
-            document.getElementById("side-menu").style.display="block";
-            document.getElementById("menu-btn").style.display="none";
-            document.getElementById("close-btn").style.display="block";
+    <main class="content">
+      {% block content %}
+      {% endblock content %}
+
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>Footer</p>
+        <!-----------------------------------------------Footer------------------------------------------------>
+            <!--section class="footer">
+  <div class="container text-center">
+      <div class="row">
+          <div class="col-md-3">
+              <h1>Useful liks</h1>
+              <p>Privacy policy</p>
+              <p>Terms of use</p>
+              <p>Return policy</p>
+              <p>Discount coupons</p>
+
+          </div>
+          <div class="col-md-3">
+                  <h1>Company</h1>
+                  <p>About Us</p>
+                  <p><a href="{% url 'contact' %}">Contact Us</a></p>
+                  <p>Career</p>
+                  <p>Affiliate</p>
+  
+          </div>
+          <div class="col-md-3">
+                  <h1>Follow us on </h1>
+                  <p><i class="fa fa-instagram"></i> Instagram</p>
+                  <p><i class="fa fa-google-plus" ></i>Google +</p>
+                  <p><i class="fa fa-skype"></i>Skype</p>
+                  <p><i class="fa fa-facebook-official"></i> Facebook</p>
+  
+          </div>
+          <div class="col-md-3 footer-image">
+                  <h1>Download App</h1>
+                  <img src="/static/photos/applogo.png" alt="">
+  
+              </div>
+  
+  
+  
+      </div>
+      <hr>
+      <p class="copyright"><i class="fa fa-copyright"></i>health essentials</p>
+  </div>
+
+</section-->
+
+      </div>
+
+      <script>
+        function openmenu() {
+          document.getElementById("side-menu").style.display="block";
+          document.getElementById("menu-btn").style.display="none";
+          document.getElementById("close-btn").style.display="block";
         }
-        function closemenu()
-        {
-            document.getElementById("side-menu").style.display="none";
-            document.getElementById("menu-btn").style.display="block";
-            document.getElementById("close-btn").style.display="none";
+        function closemenu() {
+          document.getElementById("side-menu").style.display="none";
+          document.getElementById("menu-btn").style.display="block";
+          document.getElementById("close-btn").style.display="none";
         }
-    </script>
-             
-</body>
+      </script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>     
+   </main>
+  </body>
 </html>

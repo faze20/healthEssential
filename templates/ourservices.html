@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+    <div class="gallery-ul">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link"href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{% url 'ourproducts' %}">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{% url 'ourservices' %}">Services </a>
+          </li>
+        </ul>
+  </div>
 
-<h1>Welcome to our Services section.</h1>
+<div class="title-box">
+
+<h2>Our Services </h2>
+</div>
 
 <div class="jumbotron">
 
@@ -67,7 +84,7 @@
             <li>Charcoal Bathing soap</li>
         </ul>
     </p>
-
+</div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn healthEssential.wsgi --log-file -

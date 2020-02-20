@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Movie Details {% endblock title %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h2>{{ object.author }}</h2>
+    <div class="card" style="width:400px">
+        <a href=" {{ object.name }}">
+
+      <img class="card-img-top" src="{{ object.product_photo.url }}" alt="Card image" style="width:100%">
+          </a>
+
+      <div class="card-body">
+        <h4 class="card-title">Product Price : {{ object.price }}</h4>
+        <p class="card-text">{{ object.description }}</p>
+        {% if user.is_superuser %}
+
+        <a href="{% url 'manager_edit' object.pk %}" class="btn btn-info" role="button"> Edit </a> |
+        <a href="{% url 'manager_delete' object.pk %}" class="btn btn-danger" role="button"> Delete </a> 
+        {% endif %}
+
+      </div>
+    </div>
+</div>
+<p> Back to <a href="{% url 'gallery' %}">Gallery </a>.</p>
+
+{% endblock content %}

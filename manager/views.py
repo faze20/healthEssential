@@ -18,7 +18,8 @@ class OurProductsPageView(TemplateView):
     template_name = 'ourproducts.html'
 
 
-class GalleryPageView(TemplateView):
+class GalleryPageView(ListView):
+    model = Manager
     template_name = 'gallery.html'
 
 
@@ -33,19 +34,25 @@ class ThankYouPageView(TemplateView):
     template_name = 'thankyoupage.html'
 
 
-'''class SignUpView(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'signup.html' '''
 
-
-class ManagerListView(CreateView):
+class ManagerCreateView(CreateView):
     model = Manager
     template_name = 'manager.html'
-    fields = ['author','name','price','description', 'product_image','service_image']
-    success_url = reverse_lazy('update')
+    fields = ['author','name','price','description', 'product_photo']
+    success_url = reverse_lazy('gallery')
 
 
-class ManagerUpdateView(TemplateView):
+class ManagerUpdateView(UpdateView):
     model = Manager
+    fields = ('name', 'price','product_photo','description',)
     template_name = 'update.html'
+
+class ManagerDeleteView(DeleteView):
+    model = Manager
+    template_name  = 'manager_delete.html'
+    success_url = reverse_lazy('gallery')
+
+class ManagerDetailView(DetailView):
+    model = Manager
+    template_name = 'manager_detail.html'
+

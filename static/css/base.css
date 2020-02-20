@@ -4,28 +4,29 @@
     padding: 0;
 
 }
+
 body
 {
     background-color: #f1f3f4;
     font-family: sans-serif;
 }
+
 .top-nav-bar
 {
     height: 57px;
-    top: 0;
     position: sticky;
     background: #fff;
     margin-bottom: 20px;
     border-bottom: 3px solid orange;
     z-index: 2;
 }
+
 .logo
 {
-    
     margin: 5px 10px;
     height: 40px;
-
 }
+
 .form-control
 {
     margin-top: 9px;
@@ -41,7 +42,7 @@ body
 {
     background: orange !important;
     border: 1px solid orange !important;
-    margin: 8.5px 10px 3px 0 !important;
+    margin: 8.5px 10px 0 0 !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     border-top-right-radius: 20 !important;
@@ -63,9 +64,20 @@ body
 .menu-bar
 {
     width: 40%;
-    height: 57px;
+    height: 50px;
     float: right;
 }
+.menu-bar ul {
+    display: inline-flex;
+    float: right;
+    height: 50px;
+    margin-bottom: 0px;
+
+}
+.content {
+    margin-top: 10px;
+}
+
 .nav-bar
 {
     width: 10%;
@@ -87,13 +99,7 @@ body
     cursor: pointer;    
 }
 
-.menu-bar ul
-{
-    display: inline-flex;
-    float: right;
-}
-.menu-bar ul li
-{
+.menu-bar ul li {
     border-left: 1px solid #fff;
     list-style-type: none;
     padding: 15px 35px;
@@ -142,7 +148,7 @@ body
 
 .side-menu
 {
-    height: 76%;
+    height: 79%;
     width: 15%;
     font-size: 14px;
     float: left;
@@ -225,7 +231,7 @@ body
 /*.........................slider css................................*/
 .slider
 {
-    width: 85%;
+    width: 80%;
     margin-left: 15%;
     padding: 0 10px;    
 }
@@ -295,6 +301,11 @@ body
 {
     width: 100%;
 }
+.gallery-ul
+{
+    width: 75%;
+    float: right;
+}
 .overlay-right
 {
     display: block;
@@ -343,7 +354,7 @@ body
 .product-bottom h5
 {
     font-size: 15px;
-   padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .new-products

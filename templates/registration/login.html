@@ -2,6 +2,9 @@
 {% block title %} Log in {% endblock title %}
 
 {% block content %}
+<div  class="container pt-3">
+    <div class="jumbotron">
+    
 <h2>Log In</h2>
 <form action="" method="POST">
     {% csrf_token %}
@@ -9,6 +12,7 @@
     <button  class="btn btn-success ml-2" type="submit">Log IN</button>
 </form>
 
-
+    </div>
+</div>
 
 {% endblock content %}

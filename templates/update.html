@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+        <h1>Edit</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-info ml-2 " type="submit"> Update </button>
+        </form>
 
-{% for events in object_list %}
-       <div class="events-entry">
-         <h2><a href="{% url 'event_detail' events.pk %}">{{events.name}}</a></h2>
-            <p>{{events.price}}</p>
-        </div>
-{% endfor %}
+    </div>
+    <div class="col-md-6"><img src="{{ object.product_photo.url }}" width="220" height="342"></div>
+
+</div>
 
 
-        <h1> Hi {{ name }}</h1>
 
+</div>
 
     <p>your content has been submitted.</p>
 

@@ -26,14 +26,13 @@ class Manager(models.Model):
     author             = models.ForeignKey(settings.AUTH_USER_MODEL ,on_delete=models.CASCADE)
     price              = models.IntegerField()
     description        = models.CharField(max_length=200)
+    product_photo      = models.ImageField(upload_to='picture')
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('update', args=[str(self.id)])
+        return reverse('manager_edit', args=[str(self.id)])
 
 
-class CustomUser(AbstractUser):
-    pass
 
